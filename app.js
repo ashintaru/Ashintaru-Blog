@@ -58,9 +58,7 @@ app.get('/all-blogs',(req,res)=>{
 })
 
 app.post('/create-blogs',(req,res)=>{
-
     const blog = new Blog(req.body);
-
     blog.save()
     .then( result =>{
         res.redirect('all-blogs');
@@ -68,6 +66,11 @@ app.post('/create-blogs',(req,res)=>{
     .catch( err =>{
         console.log(err)
     });
+})
+
+app.get('/blog/:id',(req,res)=>{
+    const id = req.params.id;
+    console.log(id);
 })
 
 app.get('/about',(req,res)=>{
