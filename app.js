@@ -1,14 +1,20 @@
 const express = require('express');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const mongoose = require('mongoose');
 // views 
 
 // express app
-
+//AgysukQJvN04V1gc
 const app = express();
 //port
 app.set('view engine', 'ejs');
 
-app.listen(3000);
+const  dburi = "mongodb+srv://newUser:test123@cluster0.8jgefx8.mongodb.net/sample-db?retryWrites=true&w=majority";
+
+mongoose.connect(dburi,{ useNewUrlParser :true , useUnifiedTopology:true } )
+.then( (res )=> app.listen(3000))
+.catch( err => console.log("connected failed"));
+
 app.use(morgan('dev'));
 app.use(express.static('public'));
 
