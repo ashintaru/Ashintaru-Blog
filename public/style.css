@@ -12,6 +12,33 @@ body{
     border-bottom: 1px solid #ddd;
     text-transform: uppercase;
 }
-.navs{
-    border-color:1px solid red ;
+.form_body{
+
 }
+.forms {
+    display: grid;
+    align-items: flex-end;
+
+}
+.forms > input,label{
+    margin:5px;
+    min-height: 30px;
+}
+textarea{
+    min-height:100px ;
+    margin: 5px;
+}
+#submit{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    justify-self: flex-end;
+    text-transform: uppercase;
+    background-color: cadetblue;
+    font-size: 15px;
+    padding: 5px;
+}
+footer {
+    display: flex;
+    justify-content: space-around;
+  }
